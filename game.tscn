@@ -1,0 +1,215 @@
+[gd_scene load_steps=21 format=4 uid="uid://ii4ny2rjdhjp"]
+
+[ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
+[ext_resource type="Texture2D" uid="uid://b0mcwgssygmfi" path="res://assites/Layer_0002_7.png" id="2_eow3j"]
+[ext_resource type="Texture2D" uid="uid://doh4846xvdh6" path="res://assites/Layer_0003_6.png" id="3_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://bhjobb713d7mm" path="res://assites/Background.png" id="4_vef74"]
+[ext_resource type="Texture2D" uid="uid://bbgeh2wd5cvx2" path="res://assites/Layer_0010_1.png" id="5_hve3p"]
+[ext_resource type="PackedScene" uid="uid://c6p6tp68stkl7" path="res://player.tscn" id="6_mfdv2"]
+[ext_resource type="FontFile" uid="uid://ckcq0gmwo1kxr" path="res://assites/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="7_eow3j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
+texture = ExtResource("1_ryrav")
+texture_region_size = Vector2i(16, 13)
+0:56/size_in_atlas = Vector2i(58, 5)
+0:56/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc2xo"]
+texture = ExtResource("2_eow3j")
+0:12/size_in_atlas = Vector2i(58, 17)
+0:12/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_215e1"]
+texture = ExtResource("3_j5wjh")
+5:28/size_in_atlas = Vector2i(11, 18)
+5:28/0 = 0
+34:28/size_in_atlas = Vector2i(12, 18)
+34:28/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sc4i"]
+texture = ExtResource("4_vef74")
+texture_region_size = Vector2i(16, 13)
+0:0/size_in_atlas = Vector2i(58, 61)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80cx4"]
+texture = ExtResource("5_hve3p")
+0:0/size_in_atlas = Vector2i(58, 49)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e8heu"]
+sources/0 = SubResource("TileSetAtlasSource_iotsf")
+sources/2 = SubResource("TileSetAtlasSource_lc2xo")
+sources/3 = SubResource("TileSetAtlasSource_215e1")
+sources/4 = SubResource("TileSetAtlasSource_7sc4i")
+sources/5 = SubResource("TileSetAtlasSource_80cx4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(5413, 60)
+
+[sub_resource type="Animation" id="Animation_vef74"]
+resource_name = "mm"
+length = 900.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 5.2, 5.93),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(19, -1142), Vector2(19, -1202), Vector2(19, -221)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.5, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="Animation" id="Animation_hve3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, -1142)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hve3p"]
+_data = {
+&"RESET": SubResource("Animation_hve3p"),
+&"mm": SubResource("Animation_vef74")
+}
+
+[sub_resource type="Animation" id="Animation_eow3j"]
+resource_name = "same"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j5wjh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vef74"]
+_data = {
+&"RESET": SubResource("Animation_j5wjh"),
+&"same": SubResource("Animation_eow3j")
+}
+
+[node name="game" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, 1)
+tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAA=")
+tile_set = SubResource("TileSet_e8heu")
+
+[node name="player" parent="." instance=ExtResource("6_mfdv2")]
+position = Vector2(-12, -103)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1855.5, -29)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(19, -1142)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_hve3p")
+}
+autoplay = "mm"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -264.0
+offset_top = -1179.0
+offset_right = 487.0
+offset_bottom = -1093.0
+theme_override_colors/font_color = Color(1, 0.1764706, 0.1764706, 1)
+theme_override_colors/font_shadow_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.62352943)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 70
+text = "Mad"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_vef74")
+}
+autoplay = "same"
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -225.0
+offset_top = -1174.0
+offset_right = 526.0
+offset_bottom = -1095.0
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 63
+text = "       Runner"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_vef74")
+}
+autoplay = "same"
