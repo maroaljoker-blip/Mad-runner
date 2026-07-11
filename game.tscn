@@ -1,18 +1,27 @@
-[gd_scene load_steps=21 format=4 uid="uid://ii4ny2rjdhjp"]
+[gd_scene load_steps=29 format=4 uid="uid://ii4ny2rjdhjp"]
 
+[ext_resource type="Script" uid="uid://nhpnmw138vyi" path="res://game.gd" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
 [ext_resource type="Texture2D" uid="uid://b0mcwgssygmfi" path="res://assites/Layer_0002_7.png" id="2_eow3j"]
+[ext_resource type="Texture2D" uid="uid://cxb567hlkagcf" path="res://assites/tile map.png" id="3_hve3p"]
 [ext_resource type="Texture2D" uid="uid://doh4846xvdh6" path="res://assites/Layer_0003_6.png" id="3_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bhjobb713d7mm" path="res://assites/Background.png" id="4_vef74"]
 [ext_resource type="Texture2D" uid="uid://bbgeh2wd5cvx2" path="res://assites/Layer_0010_1.png" id="5_hve3p"]
 [ext_resource type="PackedScene" uid="uid://c6p6tp68stkl7" path="res://player.tscn" id="6_mfdv2"]
 [ext_resource type="FontFile" uid="uid://ckcq0gmwo1kxr" path="res://assites/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://bwo02w7y6e1vj" path="res://button.gd" id="9_vef74"]
+[ext_resource type="PackedScene" uid="uid://8rm0metpb74r" path="res://skeleton.tscn" id="11_mfdv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
 texture = ExtResource("1_ryrav")
 texture_region_size = Vector2i(16, 13)
 0:56/size_in_atlas = Vector2i(58, 5)
 0:56/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfdv2"]
+texture = ExtResource("3_hve3p")
+1:9/size_in_atlas = Vector2i(2, 1)
+1:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc2xo"]
 texture = ExtResource("2_eow3j")
@@ -43,9 +52,7 @@ sources/2 = SubResource("TileSetAtlasSource_lc2xo")
 sources/3 = SubResource("TileSetAtlasSource_215e1")
 sources/4 = SubResource("TileSetAtlasSource_7sc4i")
 sources/5 = SubResource("TileSetAtlasSource_80cx4")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
-size = Vector2(5413, 60)
+sources/1 = SubResource("TileSetAtlasSource_mfdv2")
 
 [sub_resource type="Animation" id="Animation_vef74"]
 resource_name = "mm"
@@ -57,10 +64,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(5, 5.2, 5.93),
+"times": PackedFloat32Array(5, 5.2, 6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(19, -1142), Vector2(19, -1202), Vector2(19, -221)]
+"values": [Vector2(19, -1019), Vector2(19, -1111.3872), Vector2(19, -126.38721)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -87,25 +94,37 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(19, -1142)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:zoom")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(19, -1123)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hve3p"]
 _data = {
 &"RESET": SubResource("Animation_hve3p"),
 &"mm": SubResource("Animation_vef74")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(5413, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
+size = Vector2(13, 25.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
+size = Vector2(25, 9)
+
+[sub_resource type="Animation" id="Animation_j5wjh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_eow3j"]
@@ -124,36 +143,34 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_j5wjh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vef74"]
 _data = {
 &"RESET": SubResource("Animation_j5wjh"),
 &"same": SubResource("Animation_eow3j")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vef74"]
+
 [node name="game" type="Node2D"]
+script = ExtResource("1_j5wjh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAA=")
 tile_set = SubResource("TileSet_e8heu")
 
 [node name="player" parent="." instance=ExtResource("6_mfdv2")]
-position = Vector2(-12, -103)
+position = Vector2(27, -103)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(19, -1123)
+zoom = Vector2(1.8, 1.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_hve3p")
+}
+autoplay = "mm"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -161,16 +178,17 @@ position = Vector2(-12, -103)
 position = Vector2(1855.5, -29)
 shape = SubResource("RectangleShape2D_ryrav")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(19, -1142)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(742.5, -75.125)
+shape = SubResource("RectangleShape2D_hve3p")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_hve3p")
-}
-autoplay = "mm"
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1366.5, -87.5)
+shape = SubResource("RectangleShape2D_mfdv2")
 
-[node name="Label" type="Label" parent="."]
+[node name="labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -264.0
 offset_top = -1179.0
@@ -186,13 +204,13 @@ theme_override_fonts/font = ExtResource("7_eow3j")
 theme_override_font_sizes/font_size = 70
 text = "Mad"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="labels/Label"]
 libraries = {
 &"": SubResource("AnimationLibrary_vef74")
 }
 autoplay = "same"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -225.0
 offset_top = -1174.0
@@ -208,8 +226,40 @@ theme_override_fonts/font = ExtResource("7_eow3j")
 theme_override_font_sizes/font_size = 63
 text = "       Runner"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Label2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="labels/Label2"]
 libraries = {
 &"": SubResource("AnimationLibrary_vef74")
 }
 autoplay = "same"
+
+[node name="Label3" type="Label" parent="labels"]
+offset_left = 379.0
+offset_top = -181.0
+offset_right = 713.0
+offset_bottom = -158.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Jump over the obstacles"
+
+[node name="Label4" type="Label" parent="labels"]
+offset_left = 964.0
+offset_top = -183.0
+offset_right = 1180.0
+offset_bottom = -160.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Roll over from S"
+
+[node name="Button" type="Button" parent="."]
+offset_left = -13.0
+offset_top = -172.0
+offset_right = 61.0
+offset_bottom = -110.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vef74")
+text = "Play"
+script = ExtResource("9_vef74")
+
+[node name="skeleton" parent="." instance=ExtResource("11_mfdv2")]
+position = Vector2(2127, -76)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
