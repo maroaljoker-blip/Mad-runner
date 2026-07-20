@@ -3,9 +3,17 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-@onready var cat: CollisionShape2D = $Cat
-@onready var mice: CollisionShape2D = $Mice
+@onready var cat: CollisionShape2D = $"cat 2/cat"
+@onready var mice: CollisionShape2D = $"mice 2/mice"
+
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var area_2d: Area2D = $Area2D
+@onready var collision_shape_2d_22: CollisionShape2D = $Area2D/CollisionShape2D22
+@onready var label: Label = $Label
+@onready var animated_sprite_2d_2: AnimatedSprite2D = $AnimatedSprite2D2
+@onready var animated_sprite_2d_3: AnimatedSprite2D = $AnimatedSprite2D3
+@onready var animated_sprite_2d_4: AnimatedSprite2D = $AnimatedSprite2D4
+
 
 const SPEED = 70.0
 const JUMP_VELOCITY = -300.0
@@ -14,10 +22,54 @@ var dead = false
 var can_move = false
 var attacking = false
 var rolling = false
-
+var lives := 3
+var can_take_hit := true
 func _ready():
 	cat.set_deferred("disabled", true)
 	mice.set_deferred("disabled", true)
+	update_label()
+	# Stop all sprites from playing automatically at start
+	animated_sprite_2d_2.stop()
+	animated_sprite_2d_3.stop()
+	animated_sprite_2d_4.stop()
+	
+	# Optional: Set them all to frame 0 so they show their starting pose
+	animated_sprite_2d_2.frame = 0
+	animated_sprite_2d_3.frame = 0
+	animated_sprite_2d_4.frame = 0
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "sin":
+		if not can_take_hit:
+			return
+		animated_sprite_2d.play("hit")
+		can_take_hit = false
+		if body.name == "Nemo":
+			lives -= 2
+		else:
+			lives -= 1
+
+		print("Hit from:", body.name)
+		print("Lives:", lives)
+
+		update_label()
+
+		if lives <= 0:
+			die()
+			await get_tree().create_timer(1.0).timeout
+			get_tree().reload_current_scene()
+			return
+
+		can_take_hit = true
+
+func update_label():
+	label.text = "Lives: " + str(lives)
+	if lives == 2:
+		animated_sprite_2d_2.play("1")
+	elif lives == 1:
+		animated_sprite_2d_3.play("2")
+	elif lives == 0:
+		animated_sprite_2d_4.play("3")
 
 func die():
 	dead = true
@@ -32,10 +84,12 @@ func attack_one():
 	await get_tree().create_timer(0.3).timeout
 	cat.set_deferred("disabled", false)
 
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.5).timeout
 	cat.set_deferred("disabled", true)
 
 	attacking = false
+
+
 
 func attack_two():
 	attacking = true
@@ -44,7 +98,7 @@ func attack_two():
 	await get_tree().create_timer(0.6).timeout
 	mice.set_deferred("disabled", false)
 
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.5).timeout
 	mice.set_deferred("disabled", true)
 
 	attacking = false
@@ -62,7 +116,8 @@ func roll():
 	collision_shape_2d.position.y -= 3
 
 	rolling = false
-
+	
+	
 func _physics_process(delta: float) -> void:
 	if dead:
 		return

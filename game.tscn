@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://ii4ny2rjdhjp"]
+[gd_scene load_steps=28 format=4 uid="uid://ii4ny2rjdhjp"]
 
 [ext_resource type="Script" uid="uid://nhpnmw138vyi" path="res://game.gd" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
@@ -82,24 +82,8 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.8, 1.8)]
 }
 
-[sub_resource type="Animation" id="Animation_hve3p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(19, -1123)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hve3p"]
 _data = {
-&"RESET": SubResource("Animation_hve3p"),
 &"mm": SubResource("Animation_vef74")
 }
 
@@ -163,7 +147,7 @@ tile_set = SubResource("TileSet_e8heu")
 position = Vector2(27, -103)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(19, -1123)
+position = Vector2(19, -126.38721)
 zoom = Vector2(1.8, 1.8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player/Camera2D"]
@@ -241,12 +225,20 @@ theme_override_fonts/font = ExtResource("7_eow3j")
 text = "Jump over the obstacles"
 
 [node name="Label4" type="Label" parent="labels"]
-offset_left = 964.0
+offset_left = 911.0
 offset_top = -183.0
-offset_right = 1180.0
+offset_right = 1331.0
 offset_bottom = -160.0
 theme_override_fonts/font = ExtResource("7_eow3j")
-text = "Roll over from S"
+text = "Roll over from S or down arrow"
+
+[node name="Label5" type="Label" parent="labels"]
+offset_left = 1457.0
+offset_top = -187.0
+offset_right = 2015.0
+offset_bottom = -164.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Light attack from E, Heavy attack from Q"
 
 [node name="Button" type="Button" parent="."]
 offset_left = -13.0
@@ -259,7 +251,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vef74")
 text = "Play"
 script = ExtResource("9_vef74")
 
-[node name="skeleton" parent="." instance=ExtResource("11_mfdv2")]
-position = Vector2(2127, -76)
+[node name="skeleton" parent="." groups=["enemies"] instance=ExtResource("11_mfdv2")]
+position = Vector2(2573, -75)
+
+[node name="skeleton2" parent="." groups=["enemies"] instance=ExtResource("11_mfdv2")]
+position = Vector2(2663, -75)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
