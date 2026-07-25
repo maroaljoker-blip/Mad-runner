@@ -28,8 +28,8 @@ func die():
 	await get_tree().create_timer(10.0).timeout
 	queue_free()
 
-func _process(delta: float) -> void:
-	if moving:
+func _process(delta):
+	if moving and !dead:
 		position.x += speed * delta
 
 func _on_body_entered(body: Node2D) -> void:

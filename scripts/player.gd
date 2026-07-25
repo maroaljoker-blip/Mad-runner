@@ -14,9 +14,8 @@ extends CharacterBody2D
 @onready var animated_sprite_2d_3: AnimatedSprite2D = $AnimatedSprite2D3
 @onready var animated_sprite_2d_4: AnimatedSprite2D = $AnimatedSprite2D4
 
-
 var SPEED = 70.0
-const JUMP_VELOCITY = -300.0
+var JUMP_VELOCITY = -350.0
 
 var dead = false
 var can_move = false
@@ -38,7 +37,7 @@ func _ready():
 	animated_sprite_2d_2.frame = 0
 	animated_sprite_2d_3.frame = 0
 	animated_sprite_2d_4.frame = 0
-
+	set_collision_mask_value(2, true)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -109,7 +108,7 @@ func attack_two():
 func roll():
 	rolling = true
 	animated_sprite_2d.play("roll")
-
+	set_collision_mask_value(2, false)
 	collision_shape_2d.rotation_degrees = 90
 	collision_shape_2d.position.y += 3
 

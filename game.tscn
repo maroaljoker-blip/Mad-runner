@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ii4ny2rjdhjp"]
+[gd_scene load_steps=36 format=4 uid="uid://ii4ny2rjdhjp"]
 
 [ext_resource type="Script" uid="uid://nhpnmw138vyi" path="res://game.gd" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://ckcq0gmwo1kxr" path="res://assites/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="7_eow3j"]
 [ext_resource type="Script" uid="uid://bwo02w7y6e1vj" path="res://button.gd" id="9_vef74"]
 [ext_resource type="PackedScene" uid="uid://8rm0metpb74r" path="res://skeleton.tscn" id="11_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://dm0g2v18fdjr8" path="res://plat.tscn" id="12_iotsf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
 texture = ExtResource("1_ryrav")
@@ -22,6 +23,10 @@ texture_region_size = Vector2i(16, 13)
 texture = ExtResource("3_hve3p")
 1:9/size_in_atlas = Vector2i(2, 1)
 1:9/0 = 0
+1:5/size_in_atlas = Vector2i(8, 3)
+1:5/0 = 0
+7:1/size_in_atlas = Vector2i(5, 3)
+7:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc2xo"]
 texture = ExtResource("2_eow3j")
@@ -87,6 +92,33 @@ _data = {
 &"mm": SubResource("Animation_vef74")
 }
 
+[sub_resource type="Animation" id="Animation_iotsf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0%"]
+}
+
 [sub_resource type="Animation" id="Animation_mfdv2"]
 resource_name = "jjk"
 length = 900.0
@@ -115,33 +147,6 @@ tracks/1/keys = {
 "values": ["0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "50%", "55%", "60%", "65%", "70%", "75%", "80%", "85%", "90%", "95%", "100%"]
 }
 
-[sub_resource type="Animation" id="Animation_iotsf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["0%"]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iotsf"]
 _data = {
 &"RESET": SubResource("Animation_iotsf"),
@@ -149,7 +154,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
-size = Vector2(5413, 60)
+size = Vector2(8749, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
 size = Vector2(13, 25.75)
@@ -213,7 +218,7 @@ script = ExtResource("1_j5wjh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAC9APv/AQABAAkAAFDDAPr/AQABAAkAAADGAPj/AQABAAkAAADLAPv/AQABAAkAAGA=")
+tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAC9APv/AQABAAkAAFDDAPr/AQABAAkAAADGAPj/AQABAAkAAADLAPv/AQABAAkAAGDvAPv/AQABAAkAAFD4APv/AQABAAkAAFDyAPr/AQABAAkAADBcAef/BAAAAAAAAACWAef/BAAAAAAAAADQAef/BAAAAAAAAABVAbb/BQAAAAAAAACQAbb/BQAAAAAAAACNAbb/BQAAAAAAAAC4AbX/BQAAAAAAAADLAbj/BQAAAAAAAADKAbj/BQAAAAAAAADjAbX/BQAAAAAAAADmAbX/BQAAAAAAAADoAbb/BQAAAAAAAAA=")
 tile_set = SubResource("TileSet_e8heu")
 
 [node name="player" parent="." instance=ExtResource("6_mfdv2")]
@@ -247,7 +252,7 @@ libraries = {
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1855.5, -29)
+position = Vector2(3523.5, -29)
 shape = SubResource("RectangleShape2D_ryrav")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -262,8 +267,20 @@ shape = SubResource("RectangleShape2D_mfdv2")
 position = Vector2(3032, -73.5)
 shape = SubResource("RectangleShape2D_iotsf")
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3975, -73)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3832, -73)
+shape = SubResource("RectangleShape2D_iotsf")
+
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(3128.5, -86)
+shape = SubResource("RectangleShape2D_lc2xo")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3880, -87)
 shape = SubResource("RectangleShape2D_lc2xo")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
@@ -352,6 +369,15 @@ offset_bottom = -165.0
 theme_override_fonts/font = ExtResource("7_eow3j")
 text = "now try to reach 100% of the game"
 
+[node name="Label7" type="Label" parent="labels"]
+offset_left = 5346.0
+offset_top = -163.0
+offset_right = 6246.0
+offset_bottom = -140.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 16
+text = "you can jump or roll over this platform , enemies will appear on it"
+
 [node name="Button" type="Button" parent="."]
 offset_left = -13.0
 offset_top = -172.0
@@ -370,6 +396,69 @@ position = Vector2(2573, -75)
 position = Vector2(2846, -74)
 
 [node name="skeleton3" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
-position = Vector2(3697, -74)
+position = Vector2(3623, -75)
+
+[node name="skeleton4" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(3750, -75)
+
+[node name="skeleton5" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(4786, -75)
+
+[node name="skeleton6" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(4924, -75)
+
+[node name="skeleton7" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(5094, -75)
+
+[node name="skeleton8" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6092, -154)
+
+[node name="skeleton9" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6437, -75)
+
+[node name="skeleton11" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6783, -75)
+
+[node name="skeleton10" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6620, -155)
+
+[node name="skeleton12" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6790, -153)
+
+[node name="skeleton13" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(7130, -154)
+
+[node name="plat" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(5693, -111)
+
+[node name="plat2" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(5818, -111)
+
+[node name="plat3" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(5942, -112)
+
+[node name="plat4" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6065, -111)
+
+[node name="plat5" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6350, -111)
+
+[node name="plat6" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6475, -111)
+
+[node name="plat7" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6599, -111)
+
+[node name="plat8" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6725, -111)
+
+[node name="plat9" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6850, -111)
+
+[node name="plat10" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6975, -111)
+
+[node name="plat11" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(7100, -111)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
