@@ -15,7 +15,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d_4: AnimatedSprite2D = $AnimatedSprite2D4
 
 
-const SPEED = 70.0
+var SPEED = 70.0
 const JUMP_VELOCITY = -300.0
 
 var dead = false
@@ -24,6 +24,7 @@ var attacking = false
 var rolling = false
 var lives := 3
 var can_take_hit := true
+
 func _ready():
 	cat.set_deferred("disabled", true)
 	mice.set_deferred("disabled", true)
@@ -37,6 +38,8 @@ func _ready():
 	animated_sprite_2d_2.frame = 0
 	animated_sprite_2d_3.frame = 0
 	animated_sprite_2d_4.frame = 0
+
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "sin":

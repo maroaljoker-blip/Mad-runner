@@ -629,6 +629,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
 modulate = Color(1, 0.40392157, 0, 1)
 position = Vector2(-259.5, -261.50003)
 scale = Vector2(1.812499, 1.812499)
@@ -637,6 +638,7 @@ animation = &"1"
 autoplay = "1"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
 modulate = Color(1, 0.40392157, 0, 1)
 position = Vector2(-229.50005, -261.5001)
 scale = Vector2(1.8124962, 1.8124962)
@@ -645,6 +647,7 @@ animation = &"2"
 autoplay = "2"
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+visible = false
 modulate = Color(1, 0.40392157, 0, 1)
 position = Vector2(-198.49998, -261.49994)
 scale = Vector2(1.8125018, 1.8125018)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://ii4ny2rjdhjp"]
+[gd_scene load_steps=35 format=4 uid="uid://ii4ny2rjdhjp"]
 
 [ext_resource type="Script" uid="uid://nhpnmw138vyi" path="res://game.gd" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
@@ -87,6 +87,67 @@ _data = {
 &"mm": SubResource("Animation_vef74")
 }
 
+[sub_resource type="Animation" id="Animation_mfdv2"]
+resource_name = "jjk"
+length = 900.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 150.001, 180.001, 300.001, 330.001, 450.001, 480.001, 570.001, 599.99, 600),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330.001, 360, 390, 420, 450, 480, 510, 540, 570, 600),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "50%", "55%", "60%", "65%", "70%", "75%", "80%", "85%", "90%", "95%", "100%"]
+}
+
+[sub_resource type="Animation" id="Animation_iotsf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["0%"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iotsf"]
+_data = {
+&"RESET": SubResource("Animation_iotsf"),
+&"jjk": SubResource("Animation_mfdv2")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
 size = Vector2(5413, 60)
 
@@ -95,6 +156,18 @@ size = Vector2(13, 25.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
 size = Vector2(25, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotsf"]
+size = Vector2(12, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc2xo"]
+size = Vector2(31, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
+size = Vector2(34, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sc4i"]
+size = Vector2(14, 27)
 
 [sub_resource type="Animation" id="Animation_j5wjh"]
 length = 0.001
@@ -140,7 +213,7 @@ script = ExtResource("1_j5wjh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAA=")
+tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAC9APv/AQABAAkAAFDDAPr/AQABAAkAAADGAPj/AQABAAkAAADLAPv/AQABAAkAAGA=")
 tile_set = SubResource("TileSet_e8heu")
 
 [node name="player" parent="." instance=ExtResource("6_mfdv2")]
@@ -156,6 +229,21 @@ libraries = {
 }
 autoplay = "mm"
 
+[node name="Label7" type="Label" parent="player"]
+visible = false
+offset_left = -19.0
+offset_top = -249.0
+offset_right = 47.0
+offset_bottom = -227.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 21
+text = "0%"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/Label7"]
+libraries = {
+&"": SubResource("AnimationLibrary_iotsf")
+}
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -169,6 +257,22 @@ shape = SubResource("RectangleShape2D_hve3p")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1366.5, -87.5)
 shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3032, -73.5)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3128.5, -86)
+shape = SubResource("RectangleShape2D_lc2xo")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3178, -118)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3256, -73)
+shape = SubResource("RectangleShape2D_7sc4i")
 
 [node name="labels" type="Node" parent="."]
 
@@ -240,6 +344,14 @@ offset_bottom = -164.0
 theme_override_fonts/font = ExtResource("7_eow3j")
 text = "Light attack from E, Heavy attack from Q"
 
+[node name="Label6" type="Label" parent="labels"]
+offset_left = 2363.0
+offset_top = -188.0
+offset_right = 2839.0
+offset_bottom = -165.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "now try to reach 100% of the game"
+
 [node name="Button" type="Button" parent="."]
 offset_left = -13.0
 offset_top = -172.0
@@ -255,6 +367,9 @@ script = ExtResource("9_vef74")
 position = Vector2(2573, -75)
 
 [node name="skeleton2" parent="." groups=["enemies"] instance=ExtResource("11_mfdv2")]
-position = Vector2(2663, -75)
+position = Vector2(2846, -74)
+
+[node name="skeleton3" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(3697, -74)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
