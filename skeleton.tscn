@@ -355,6 +355,8 @@ size = Vector2(25, 16)
 size = Vector2(1, 15)
 
 [node name="skeleton" type="Area2D"]
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("1_r6xse")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -376,6 +378,8 @@ position = Vector2(9.5, 0)
 shape = SubResource("RectangleShape2D_sv33q")
 
 [node name="sin" type="CharacterBody2D" parent="."]
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2" type="CollisionShape2D" parent="sin"]
 position = Vector2(-3.5, -0.5)

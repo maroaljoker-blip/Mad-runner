@@ -1,17 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm0g2v18fdjr8"]
+[gd_scene load_steps=4 format=3 uid="uid://dm0g2v18fdjr8"]
 
 [ext_resource type="Texture2D" uid="uid://cxb567hlkagcf" path="res://assites/tile map.png" id="1_fotvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47gav"]
 size = Vector2(116, 24)
 
-[node name="plat" type="StaticBody2D"]
-collision_layer = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaiq1"]
+size = Vector2(120, 29)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -8)
-shape = SubResource("RectangleShape2D_47gav")
-one_way_collision = true
+[node name="plat" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.25, -7.5)
@@ -19,3 +16,17 @@ scale = Vector2(1.0035971, 0.7580645)
 texture = ExtResource("1_fotvx")
 region_enabled = true
 region_rect = Rect2(12.999985, 72, 139.49998, 62.999985)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -8)
+shape = SubResource("RectangleShape2D_47gav")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -7.5)
+shape = SubResource("RectangleShape2D_uaiq1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

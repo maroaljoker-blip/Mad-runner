@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @onready var cat: CollisionShape2D = $"cat 2/cat"
 @onready var mice: CollisionShape2D = $"mice 2/mice"
+@onready var camera_2d: Camera2D = $Camera2D
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var area_2d: Area2D = $Area2D
@@ -123,11 +124,11 @@ func roll():
 func _physics_process(delta: float) -> void:
 	if dead:
 		return
-
+	
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Roll
 	if can_move and !rolling and !attacking and Input.is_action_just_pressed("roll"):
 		await roll()

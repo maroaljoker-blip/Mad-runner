@@ -1,12 +1,16 @@
 extends Node2D
 @onready var player: CharacterBody2D = $player
 @onready var button: Button = $Button
-@onready var animation_player: AnimationPlayer = $player/Label7/AnimationPlayer
-@onready var label_7: Label = $player/Label7
+
+
+@onready var animation_player: AnimationPlayer = $player/Labelx/AnimationPlayer
+
+
 
 var played = false
 var wave1_started = false
 var wave2_started = false
+var wave3_started = false
 func _on_button_pressed() -> void:
 	player.can_move = true
 	button.disabled = true
@@ -26,11 +30,15 @@ func _process(delta):
 		player.SPEED = 85
 		for enemy in get_tree().get_nodes_in_group("enemiess"):
 			enemy.moving = true
-		animation_player.play("jjk")
-		label_7.visible = true
+		
+		animation_player.play("1.1")
 	if player.global_position.x >= 5693 and !wave2_started:
 		wave2_started = true
 		player.JUMP_VELOCITY = -380.0
 		for enemy in get_tree().get_nodes_in_group("enemies5%"):
 			enemy.moving = true
-		
+	animation_player.play("1.2")
+	if player.global_position.x >= 7750 and !wave3_started:
+		wave3_started = true
+		for enemy in get_tree().get_nodes_in_group("enemies10%"):
+			enemy.moving = true

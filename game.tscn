@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://ii4ny2rjdhjp"]
+[gd_scene load_steps=41 format=4 uid="uid://ii4ny2rjdhjp"]
 
 [ext_resource type="Script" uid="uid://nhpnmw138vyi" path="res://game.gd" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bwo02w7y6e1vj" path="res://button.gd" id="9_vef74"]
 [ext_resource type="PackedScene" uid="uid://8rm0metpb74r" path="res://skeleton.tscn" id="11_mfdv2"]
 [ext_resource type="PackedScene" uid="uid://dm0g2v18fdjr8" path="res://plat.tscn" id="12_iotsf"]
+[ext_resource type="Script" uid="uid://coyx0tjhsxxyj" path="res://skeleton2.gd" id="13_lc2xo"]
+[ext_resource type="PackedScene" uid="uid://c5dn6xxanvgrw" path="res://long_plat.tscn" id="14_215e1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
 texture = ExtResource("1_ryrav")
@@ -93,35 +95,45 @@ _data = {
 }
 
 [sub_resource type="Animation" id="Animation_iotsf"]
+resource_name = "DD"
+length = 900.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(1.4, 1.4)]
+}
+
+[sub_resource type="Animation" id="Animation_lc2xo"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath(".:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["0%"]
+"values": [Vector2(1.4, 1.4)]
 }
 
-[sub_resource type="Animation" id="Animation_mfdv2"]
-resource_name = "jjk"
-length = 900.0
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_215e1"]
+_data = {
+&"DD": SubResource("Animation_iotsf"),
+&"RESET": SubResource("Animation_lc2xo")
+}
+
+[sub_resource type="Animation" id="Animation_215e1"]
+resource_name = "1.1"
+length = 60.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -129,32 +141,36 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2, 150.001, 180.001, 300.001, 330.001, 450.001, 480.001, 570.001, 599.99, 600),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330.001, 360, 390, 420, 450, 480, 510, 540, 570, 600),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": ["0%", "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "50%", "55%", "60%", "65%", "70%", "75%", "80%", "85%", "90%", "95%", "100%"]
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_iotsf"]
+[sub_resource type="Animation" id="Animation_7sc4i"]
+resource_name = "1.2"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["0%", "5%"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80cx4"]
 _data = {
-&"RESET": SubResource("Animation_iotsf"),
-&"jjk": SubResource("Animation_mfdv2")
+&"1.1": SubResource("Animation_215e1"),
+&"1.2": SubResource("Animation_7sc4i")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
-size = Vector2(8749, 60)
+size = Vector2(14938, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
 size = Vector2(13, 25.75)
@@ -218,15 +234,15 @@ script = ExtResource("1_j5wjh")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAC9APv/AQABAAkAAFDDAPr/AQABAAkAAADGAPj/AQABAAkAAADLAPv/AQABAAkAAGDvAPv/AQABAAkAAFD4APv/AQABAAkAAFDyAPr/AQABAAkAADBcAef/BAAAAAAAAACWAef/BAAAAAAAAADQAef/BAAAAAAAAABVAbb/BQAAAAAAAACQAbb/BQAAAAAAAACNAbb/BQAAAAAAAAC4AbX/BQAAAAAAAADLAbj/BQAAAAAAAADKAbj/BQAAAAAAAADjAbX/BQAAAAAAAADmAbX/BQAAAAAAAADoAbb/BQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAC9APv/AQABAAkAAFDDAPr/AQABAAkAAADGAPj/AQABAAkAAADLAPv/AQABAAkAAGDvAPv/AQABAAkAAFD4APv/AQABAAkAAFDyAPr/AQABAAkAADBcAef/BAAAAAAAAACWAef/BAAAAAAAAADQAef/BAAAAAAAAABVAbb/BQAAAAAAAACQAbb/BQAAAAAAAACNAbb/BQAAAAAAAAC4AbX/BQAAAAAAAADLAbj/BQAAAAAAAADKAbj/BQAAAAAAAADjAbX/BQAAAAAAAADmAbX/BQAAAAAAAADoAbb/BQAAAAAAAAAKAuf/BAAAAAAAAABEAuf/BAAAAAAAAAAhArb/BQAAAAAAAABKArn/BQAAAAAAAAB+Auf/BAAAAAAAAACDArb/BQAAAAAAAAC4Auf/BAAAAAAAAADyAuf/BAAAAAAAAAC9Arf/BQAAAAAAAADxArj/BQAAAAAAAAAsA+f/BAAAAAAAAABmA+f/BAAAAAAAAAArA7f/BQAAAAAAAABcA7n/BQAAAAAAAAA=")
 tile_set = SubResource("TileSet_e8heu")
 
 [node name="player" parent="." instance=ExtResource("6_mfdv2")]
-position = Vector2(27, -103)
+position = Vector2(0, -103)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(19, -126.38721)
-zoom = Vector2(1.8, 1.8)
+zoom = Vector2(1.4, 1.4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player/Camera2D"]
 libraries = {
@@ -234,25 +250,29 @@ libraries = {
 }
 autoplay = "mm"
 
-[node name="Label7" type="Label" parent="player"]
-visible = false
-offset_left = -19.0
-offset_top = -249.0
-offset_right = 47.0
-offset_bottom = -227.0
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="player/Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_215e1")
+}
+
+[node name="Labelx" type="Label" parent="player"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -21.0
+offset_top = -199.0
+offset_right = 23.0
+offset_bottom = -176.0
 theme_override_fonts/font = ExtResource("7_eow3j")
-theme_override_font_sizes/font_size = 21
 text = "0%"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="player/Label7"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/Labelx"]
 libraries = {
-&"": SubResource("AnimationLibrary_iotsf")
+&"": SubResource("AnimationLibrary_80cx4")
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3523.5, -29)
+position = Vector2(6618, -29)
 shape = SubResource("RectangleShape2D_ryrav")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -378,6 +398,14 @@ theme_override_fonts/font = ExtResource("7_eow3j")
 theme_override_font_sizes/font_size = 16
 text = "you can jump or roll over this platform , enemies will appear on it"
 
+[node name="Label8" type="Label" parent="labels"]
+offset_left = 7740.0
+offset_top = -154.0
+offset_right = 8256.0
+offset_bottom = -131.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "enemies speed will increase, good luck"
+
 [node name="Button" type="Button" parent="."]
 offset_left = -13.0
 offset_top = -172.0
@@ -389,44 +417,43 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_vef74")
 text = "Play"
 script = ExtResource("9_vef74")
 
-[node name="skeleton" parent="." groups=["enemies"] instance=ExtResource("11_mfdv2")]
+[node name="skeletons" type="Node" parent="."]
+
+[node name="skeleton" parent="skeletons" groups=["enemies"] instance=ExtResource("11_mfdv2")]
 position = Vector2(2573, -75)
 
-[node name="skeleton2" parent="." groups=["enemies"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton2" parent="skeletons" groups=["enemies"] instance=ExtResource("11_mfdv2")]
 position = Vector2(2846, -74)
 
-[node name="skeleton3" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton3" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
 position = Vector2(3623, -75)
 
-[node name="skeleton4" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton4" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
 position = Vector2(3750, -75)
 
-[node name="skeleton5" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton5" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
 position = Vector2(4786, -75)
 
-[node name="skeleton6" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton6" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
 position = Vector2(4924, -75)
 
-[node name="skeleton7" parent="." groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton7" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
 position = Vector2(5094, -75)
 
-[node name="skeleton8" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton8" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
 position = Vector2(6092, -154)
 
-[node name="skeleton9" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton9" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
 position = Vector2(6437, -75)
 
-[node name="skeleton11" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
-position = Vector2(6783, -75)
-
-[node name="skeleton10" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+[node name="skeleton10" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
 position = Vector2(6620, -155)
 
-[node name="skeleton12" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
-position = Vector2(6790, -153)
+[node name="skeleton11" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6783, -75)
 
-[node name="skeleton13" parent="." groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
-position = Vector2(7130, -154)
+[node name="skeleton12" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6790, -153)
 
 [node name="plat" parent="." instance=ExtResource("12_iotsf")]
 position = Vector2(5693, -111)
@@ -460,5 +487,70 @@ position = Vector2(6975, -111)
 
 [node name="plat11" parent="." instance=ExtResource("12_iotsf")]
 position = Vector2(7100, -111)
+
+[node name="skeleton" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(8699, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton2" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(8833, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton3" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(8965, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton4" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9138, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton5" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9364, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton6" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9669, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton7" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9742, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton8" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9985, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton9" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10173, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton10" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10480, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton11" parent="." groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10609, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="long plat" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(8420, -110)
+
+[node name="long plat2" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(9179, -110)
+
+[node name="long plat3" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(9940, -110)
+
+[node name="long plat4" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(10698, -110)
+
+[node name="long plat5" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(11459, -110)
+
+[node name="long plat6" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(12217, -110)
+
+[node name="long plat7" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(12981, -110)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

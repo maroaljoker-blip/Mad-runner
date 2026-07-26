@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5dn6xxanvgrw"]
+
+[ext_resource type="Texture2D" uid="uid://cxb567hlkagcf" path="res://assites/tile map.png" id="1_dqp4s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_128en"]
+size = Vector2(757, 24)
+
+[node name="long plat" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.25, -7.5)
+scale = Vector2(1.0035971, 0.7580645)
+texture = ExtResource("1_dqp4s")
+region_enabled = true
+region_rect = Rect2(12.999985, 72, 139.49998, 62.999985)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(125.25001, -7.5)
+scale = Vector2(1.0035971, 0.7580645)
+texture = ExtResource("1_dqp4s")
+region_enabled = true
+region_rect = Rect2(12.999985, 72, 139.49998, 62.999985)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(253.25005, -7.5000005)
+scale = Vector2(1.0035971, 0.7580645)
+texture = ExtResource("1_dqp4s")
+region_enabled = true
+region_rect = Rect2(12.999985, 72, 139.49998, 62.999985)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(379.25, -7.5)
+scale = Vector2(1.0035971, 0.7580645)
+texture = ExtResource("1_dqp4s")
+region_enabled = true
+region_rect = Rect2(12.999985, 72, 139.49998, 62.999985)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(506.2501, -7.5)
+scale = Vector2(1.0035971, 0.7580645)
+texture = ExtResource("1_dqp4s")
+region_enabled = true
+region_rect = Rect2(12.999985, 72, 139.49998, 62.999985)
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(634.2502, -7.5)
+scale = Vector2(1.0035971, 0.7580645)
+texture = ExtResource("1_dqp4s")
+region_enabled = true
+region_rect = Rect2(12.999985, 72, 139.49998, 62.999985)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(316.5, -8)
+shape = SubResource("RectangleShape2D_128en")
+one_way_collision = true
