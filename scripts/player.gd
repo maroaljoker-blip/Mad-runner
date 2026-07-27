@@ -64,15 +64,31 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			return
 
 		can_take_hit = true
-
+ 
+func heal():
+	if lives < 3:
+		lives += 1
+		update_label()
 func update_label():
 	label.text = "Lives: " + str(lives)
-	if lives == 2:
-		animated_sprite_2d_2.play("1")
-	elif lives == 1:
-		animated_sprite_2d_3.play("2")
-	elif lives == 0:
-		animated_sprite_2d_4.play("3")
+
+	match lives:
+		3:
+			animated_sprite_2d_2.play("full")
+			animated_sprite_2d_3.play("full")
+			animated_sprite_2d_4.play("full")
+		2:
+			animated_sprite_2d_2.play("empty")
+			animated_sprite_2d_3.play("full")
+			animated_sprite_2d_4.play("full")
+		1:
+			animated_sprite_2d_2.play("empty")
+			animated_sprite_2d_3.play("empty")
+			animated_sprite_2d_4.play("full")
+		0:
+			animated_sprite_2d_2.play("empty")
+			animated_sprite_2d_3.play("empty")
+			animated_sprite_2d_4.play("empty")
 
 func die():
 	dead = true
@@ -98,7 +114,7 @@ func attack_two():
 	attacking = true
 	animated_sprite_2d.play("attack 2")
 
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.3).timeout
 	mice.set_deferred("disabled", false)
 
 	await get_tree().create_timer(0.5).timeout
