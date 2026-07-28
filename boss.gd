@@ -58,7 +58,7 @@ func start_attack():
 
 	fire_blast()
 
-	await get_tree().create_timer(0.8).timeout
+	await get_tree().create_timer(0.5).timeout
 
 	sprite_2d.visible = false
 	animated_sprite_2d_2.visible = false
@@ -76,9 +76,9 @@ func fire_blast():
 
 	await tween.finished
 
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 
 	var return_tween = create_tween()
-	return_tween.tween_property(nemo, "position", nemo_start_position, 0.3)
+	return_tween.tween_property(nemo, "position", nemo_start_position, 0.01)
 
 	await return_tween.finished

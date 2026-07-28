@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmpsxa7yvm7qj"
+path="res://.godot/imported/AudioCutter_Phonk House Mix ※ Best Aggressive Drift Phonk ※ Фонк 2023(MP3_160K).mp3-8d4dc9f1c26b95fd07c4ada54c4e2061.mp3str"
+
+[deps]
+
+source_file="res://assites/Pixel_Operator_8/AudioCutter_Phonk House Mix ※ Best Aggressive Drift Phonk ※ Фонк 2023(MP3_160K).mp3"
+dest_files=["res://.godot/imported/AudioCutter_Phonk House Mix ※ Best Aggressive Drift Phonk ※ Фонк 2023(MP3_160K).mp3-8d4dc9f1c26b95fd07c4ada54c4e2061.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,2070 @@
+[gd_scene load_steps=63 format=4 uid="uid://ii4ny2rjdhjp"]
+
+[ext_resource type="Script" uid="uid://nhpnmw138vyi" path="res://game.gd" id="1_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
+[ext_resource type="Texture2D" uid="uid://b0mcwgssygmfi" path="res://assites/Layer_0002_7.png" id="2_eow3j"]
+[ext_resource type="Texture2D" uid="uid://cxb567hlkagcf" path="res://assites/tile map.png" id="3_hve3p"]
+[ext_resource type="Texture2D" uid="uid://doh4846xvdh6" path="res://assites/Layer_0003_6.png" id="3_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://bhjobb713d7mm" path="res://assites/Background.png" id="4_vef74"]
+[ext_resource type="Texture2D" uid="uid://bbgeh2wd5cvx2" path="res://assites/Layer_0010_1.png" id="5_hve3p"]
+[ext_resource type="PackedScene" uid="uid://c6p6tp68stkl7" path="res://player.tscn" id="6_mfdv2"]
+[ext_resource type="FontFile" uid="uid://ckcq0gmwo1kxr" path="res://assites/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="7_eow3j"]
+[ext_resource type="Texture2D" uid="uid://c88uocdpdgf33" path="res://assites/SHADOW Series - The Free Assets/SHADOW Series - Pixel tent/tent-1.png" id="8_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://bj3u5myfl7xwu" path="res://assites/SHADOW Series - The Free Assets/SHADOW Series - Pixel tent/tent-2.png" id="9_5b14r"]
+[ext_resource type="Script" uid="uid://bwo02w7y6e1vj" path="res://button.gd" id="9_vef74"]
+[ext_resource type="PackedScene" uid="uid://8rm0metpb74r" path="res://skeleton.tscn" id="11_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://dm0g2v18fdjr8" path="res://plat.tscn" id="12_iotsf"]
+[ext_resource type="Script" uid="uid://coyx0tjhsxxyj" path="res://skeleton2.gd" id="13_lc2xo"]
+[ext_resource type="PackedScene" uid="uid://c5dn6xxanvgrw" path="res://long_plat.tscn" id="14_215e1"]
+[ext_resource type="Script" uid="uid://bbf4ejg6gwsa0" path="res://skeleton.red.gd" id="15_7sc4i"]
+[ext_resource type="Script" uid="uid://bs4fuejx3rimb" path="res://skeleton3.gd" id="15_e36ub"]
+[ext_resource type="Script" uid="uid://dyo00qj7vebsa" path="res://skeleton.blue.gd" id="16_80cx4"]
+[ext_resource type="Script" uid="uid://co0pogu13jl0h" path="res://skeleton.red2.gd" id="16_e8heu"]
+[ext_resource type="Script" uid="uid://04cxio45tai" path="res://skeleton.blue2.gd" id="18_rvswv"]
+[ext_resource type="PackedScene" uid="uid://crrmqldtfqwxl" path="res://heart.tscn" id="19_boyg6"]
+[ext_resource type="PackedScene" uid="uid://c03sxjiijytlc" path="res://boss.tscn" id="21_hb5m1"]
+[ext_resource type="Script" uid="uid://e22gftld3cud" path="res://manager.gd" id="22_x5p1p"]
+[ext_resource type="PackedScene" uid="uid://yc8nhw8q2g24" path="res://coin.tscn" id="23_qhcbd"]
+[ext_resource type="Texture2D" uid="uid://q4aifgpgas65" path="res://assites/—Pngtree—settings glyph black icon_3755352.png" id="26_bnpwn"]
+[ext_resource type="Script" uid="uid://bevnin2xwqwxp" path="res://button_2.gd" id="27_36jdj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
+texture = ExtResource("1_ryrav")
+texture_region_size = Vector2i(16, 13)
+0:56/size_in_atlas = Vector2i(58, 5)
+0:56/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfdv2"]
+texture = ExtResource("3_hve3p")
+1:9/size_in_atlas = Vector2i(2, 1)
+1:9/0 = 0
+1:5/size_in_atlas = Vector2i(8, 3)
+1:5/0 = 0
+7:1/size_in_atlas = Vector2i(5, 3)
+7:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc2xo"]
+texture = ExtResource("2_eow3j")
+0:12/size_in_atlas = Vector2i(58, 17)
+0:12/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_215e1"]
+texture = ExtResource("3_j5wjh")
+5:28/size_in_atlas = Vector2i(11, 18)
+5:28/0 = 0
+34:28/size_in_atlas = Vector2i(12, 18)
+34:28/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sc4i"]
+texture = ExtResource("4_vef74")
+texture_region_size = Vector2i(16, 13)
+0:0/size_in_atlas = Vector2i(58, 61)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80cx4"]
+texture = ExtResource("5_hve3p")
+0:0/size_in_atlas = Vector2i(58, 49)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_boyg6"]
+texture = ExtResource("4_vef74")
+0:46/size_in_atlas = Vector2i(58, 3)
+0:46/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfvwf"]
+texture = ExtResource("8_xa8c5")
+texture_region_size = Vector2i(61, 23)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhpj7"]
+texture = ExtResource("9_5b14r")
+texture_region_size = Vector2i(29, 29)
+0:0/size_in_atlas = Vector2i(2, 1)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e8heu"]
+sources/0 = SubResource("TileSetAtlasSource_iotsf")
+sources/2 = SubResource("TileSetAtlasSource_lc2xo")
+sources/3 = SubResource("TileSetAtlasSource_215e1")
+sources/4 = SubResource("TileSetAtlasSource_7sc4i")
+sources/5 = SubResource("TileSetAtlasSource_80cx4")
+sources/1 = SubResource("TileSetAtlasSource_mfdv2")
+sources/6 = SubResource("TileSetAtlasSource_boyg6")
+sources/7 = SubResource("TileSetAtlasSource_xfvwf")
+sources/8 = SubResource("TileSetAtlasSource_dhpj7")
+
+[sub_resource type="Animation" id="Animation_vef74"]
+resource_name = "mm"
+length = 900.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 5.2, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(19, -1019), Vector2(19, -1111.3872), Vector2(19, -126.38721)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.5, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.8, 1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hve3p"]
+_data = {
+&"mm": SubResource("Animation_vef74")
+}
+
+[sub_resource type="Animation" id="Animation_iotsf"]
+resource_name = "DD"
+length = 900.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.8, 1.8), Vector2(1.4, 1.4)]
+}
+
+[sub_resource type="Animation" id="Animation_lc2xo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.4, 1.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_215e1"]
+_data = {
+&"DD": SubResource("Animation_iotsf"),
+&"RESET": SubResource("Animation_lc2xo")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(40167, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
+size = Vector2(13, 25.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
+size = Vector2(25, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotsf"]
+size = Vector2(12, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc2xo"]
+size = Vector2(31, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
+size = Vector2(34, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sc4i"]
+size = Vector2(14, 27)
+
+[sub_resource type="Animation" id="Animation_j5wjh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eow3j"]
+resource_name = "same"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vef74"]
+_data = {
+&"RESET": SubResource("Animation_j5wjh"),
+&"same": SubResource("Animation_eow3j")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vef74"]
+
+[sub_resource type="Animation" id="Animation_5b14r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-242, -283)]
+}
+
+[sub_resource type="Animation" id="Animation_xa8c5"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-242, -536), Vector2(-242, -283)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bnpwn"]
+_data = {
+&"RESET": SubResource("Animation_5b14r"),
+&"new_animation": SubResource("Animation_xa8c5")
+}
+
+[sub_resource type="Animation" id="Animation_xfvwf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-50, -291)]
+}
+
+[sub_resource type="Animation" id="Animation_36jdj"]
+resource_name = "nn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-50, -536), Vector2(-50, -291)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dhpj7"]
+_data = {
+&"RESET": SubResource("Animation_xfvwf"),
+&"nn": SubResource("Animation_36jdj")
+}
+
+[sub_resource type="Animation" id="Animation_082n1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(180, -283)]
+}
+
+[sub_resource type="Animation" id="Animation_7knny"]
+resource_name = "ll"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(180, -532), Vector2(180, -283)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xex6t"]
+_data = {
+&"RESET": SubResource("Animation_082n1"),
+&"ll": SubResource("Animation_7knny")
+}
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_j5wjh")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, 4)
+tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAAAAAA6AOf/BAAAAAAAAAB0AOf/BAAAAAAAAACL/7b/BQAAAAAAAADC/7b/BQAAAAAAAAD8/7b/BQAAAAAAAAA2ALb/BQAAAAAAAABuALb/BQAAAAAAAACoALb/BQAAAAAAAADiALb/BQAAAAAAAAAbAbb/BQAAAAAAAAA7AOT/BQAAAAAAAAA7AOf/BAAAAAAAAACuAOf/BAAAAAAAAADoAOf/BAAAAAAAAAAiAef/BAAAAAAAAAAuAPv/AQABAAkAAFBVAPr/AQABAAkAAAC9APv/AQABAAkAAFDDAPr/AQABAAkAAADGAPj/AQABAAkAAADLAPv/AQABAAkAAGDvAPv/AQABAAkAAFD4APv/AQABAAkAAFDyAPr/AQABAAkAADBcAef/BAAAAAAAAACWAef/BAAAAAAAAADQAef/BAAAAAAAAABVAbb/BQAAAAAAAACQAbb/BQAAAAAAAACNAbb/BQAAAAAAAAC4AbX/BQAAAAAAAADLAbj/BQAAAAAAAADKAbj/BQAAAAAAAADjAbX/BQAAAAAAAADmAbX/BQAAAAAAAADoAbb/BQAAAAAAAAAKAuf/BAAAAAAAAABEAuf/BAAAAAAAAAAhArb/BQAAAAAAAABKArn/BQAAAAAAAAB+Auf/BAAAAAAAAACDArb/BQAAAAAAAAC4Auf/BAAAAAAAAADyAuf/BAAAAAAAAAC9Arf/BQAAAAAAAADxArj/BQAAAAAAAAAsA+f/BAAAAAAAAABmA+f/BAAAAAAAAAArA7f/BQAAAAAAAABcA7n/BQAAAAAAAACgA+f/BAAAAAAAAACVA7j/BQAAAAAAAACyA7f/BQAAAAAAAADaA+f/BAAAAAAAAAAUBOf/BAAAAAAAAADpA7b/BQAAAAAAAAAfBLb/BQAAAAAAAABOBOf/BAAAAAAAAACIBOf/BAAAAAAAAABYBLb/BQAAAAAAAACSBLb/BQAAAAAAAADCBOf/BAAAAAAAAADIBLb/BQAAAAAAAAD1BLP/BQAAAAAAAADvBLf/BQAAAAAAAAD8BOf/BAAAAAAAAAA2Bef/BAAAAAAAAAApBbf/BQAAAAAAAABwBef/BAAAAAAAAACqBef/BAAAAAAAAABjBbb/BQAAAAAAAACdBbf/BQAAAAAAAADXBbb/BQAAAAAAAAAJBrb/BQAAAAAAAADkBef/BAAAAAAAAAAeBuf/BAAAAAAAAABOARgABAAAAAAAADCIARgABAAAAAAAADDCARgABAAAAAAAADD8ARgABAAAAAAAADA2AhgABAAAAAAAADBwAhgABAAAAAAAADCqAhgABAAAAAAAADDkAhgABAAAAAAAADAeAxgABAAAAAAAADBYAxgABAAAAAAAADCSAxgABAAAAAAAADDMAxgABAAAAAAAADAGBBgABAAAAAAAADBABBgABAAAAAAAADB6BBgABAAAAAAAADC0BBgABAAAAAAAADDuBBgABAAAAAAAADAoBRgABAAAAAAAADBiBRgABAAAAAAAADCcBRgABAAAAAAAADDWBRgABAAAAAAAADAQBhgABAAAAAAAADBKBhgABAAAAAAAADBYBuf/BAAAAAAAAACSBuf/BAAAAAAAAACEBhgABAAAAAAAADC+BhgABAAAAAAAADBDBrb/BQAAAAAAAAB9Brf/BQAAAAAAAAC3Brb/BQAAAAAAAADMBuf/BAAAAAAAAAAGB+f/BAAAAAAAAABAB+f/BAAAAAAAAADvBrz/BQAAAAAAAAAnB7b/BQAAAAAAAABBB7X/BQAAAAAAAAA6B7z/BQAAAAAAAAD4BhgABAAAAAAAADAyBxgABAAAAAAAADB6B+f/BAAAAAAAAAC0B+f/BAAAAAAAAADuB+f/BAAAAAAAAAAoCOf/BAAAAAAAAABiCOf/BAAAAAAAAABuB7T/BQAAAAAAAABuB7n/BQAAAAAAAACmB7X/BQAAAAAAAACyB7f/BQAAAAAAAACdB7f/BQAAAAAAAADqB7f/BQAAAAAAAAAdCLX/BQAAAAAAAAAdCLf/BQAAAAAAAABLCLf/BQAAAAAAAABLCLb/BQAAAAAAAABgCLX/BQAAAAAAAABbCLL/BQAAAAAAAABrBxgABAAAAAAAADClBxgABAAAAAAAADDfBxgABAAAAAAAADAZCBgABAAAAAAAADBTCBgABAAAAAAAADCcCOf/BAAAAAAAAADWCOf/BAAAAAAAAAAQCef/BAAAAAAAAABKCef/BAAAAAAAAACECef/BAAAAAAAAACNCBgABAAAAAAAADDHCBkABAAAAAAAADABCRkABAAAAAAAADA7CRkABAAAAAAAADB1CRkABAAAAAAAADCHCLf/BQAAAAAAAACECLf/BQAAAAAAAACtCLb/BQAAAAAAAADgCLT/BQAAAAAAAADgCLj/BQAAAAAAAAAFCbf/BQAAAAAAAAApCbj/BQAAAAAAAABJCbj/BQAAAAAAAABvCbv/BQAAAAAAAABwCbv/BQAAAAAAAACACbj/BQAAAAAAAACACbf/BQAAAAAAAAABAPr/BwAAAAAAAAA=")
+tile_set = SubResource("TileSet_e8heu")
+
+[node name="player" parent="." instance=ExtResource("6_mfdv2")]
+position = Vector2(5, -103)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(19, -126.38721)
+zoom = Vector2(1.4, 1.4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_hve3p")
+}
+autoplay = "mm"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="player/Camera2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_215e1")
+}
+
+[node name="Labelx" type="Label" parent="player"]
+visible = false
+offset_left = -19.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "0%"
+
+[node name="Label2" type="Label" parent="player"]
+visible = false
+offset_left = -19.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "10%"
+
+[node name="Label3" type="Label" parent="player"]
+visible = false
+offset_left = -31.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "20%"
+
+[node name="Label4" type="Label" parent="player"]
+visible = false
+offset_left = -31.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "30%"
+
+[node name="Label5" type="Label" parent="player"]
+visible = false
+offset_left = -35.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "40%"
+
+[node name="Label7" type="Label" parent="player"]
+visible = false
+offset_left = -35.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "60%"
+
+[node name="Label8" type="Label" parent="player"]
+visible = false
+offset_left = -34.0
+offset_top = -215.0
+offset_right = 26.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "70%"
+
+[node name="Label9" type="Label" parent="player"]
+visible = false
+offset_left = -35.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "80%"
+
+[node name="Label10" type="Label" parent="player"]
+visible = false
+offset_left = -35.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "90%"
+
+[node name="Label12" type="Label" parent="player"]
+visible = false
+offset_left = -153.0
+offset_top = -215.0
+offset_right = 220.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Congratulations you win 👏🎈"
+
+[node name="Label11" type="Label" parent="player"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+offset_left = -35.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "100%"
+
+[node name="Label6" type="Label" parent="player"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+offset_left = -35.0
+offset_top = -215.0
+offset_right = 25.0
+offset_bottom = -192.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "50%"
+
+[node name="coins label" type="Label" parent="player"]
+visible = false
+offset_left = -386.0
+offset_top = -354.0
+offset_right = -152.0
+offset_bottom = -288.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(19232.5, -29)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(742.5, -75.125)
+shape = SubResource("RectangleShape2D_hve3p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1366.5, -87.5)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3032, -73.5)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3975, -73)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3832, -73)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3128.5, -86)
+shape = SubResource("RectangleShape2D_lc2xo")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3880, -87)
+shape = SubResource("RectangleShape2D_lc2xo")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3178, -118)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3256, -73)
+shape = SubResource("RectangleShape2D_7sc4i")
+
+[node name="labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="labels"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -264.0
+offset_top = -1179.0
+offset_right = 487.0
+offset_bottom = -1093.0
+theme_override_colors/font_color = Color(1, 0.1764706, 0.1764706, 1)
+theme_override_colors/font_shadow_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.62352943)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 70
+text = "Mad"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="labels/Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_vef74")
+}
+autoplay = "same"
+
+[node name="Label2" type="Label" parent="labels"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -225.0
+offset_top = -1174.0
+offset_right = 526.0
+offset_bottom = -1095.0
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 63
+text = "       Runner"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="labels/Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_vef74")
+}
+autoplay = "same"
+
+[node name="Label3" type="Label" parent="labels"]
+offset_left = 379.0
+offset_top = -181.0
+offset_right = 713.0
+offset_bottom = -158.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Jump over the obstacles"
+
+[node name="Label4" type="Label" parent="labels"]
+offset_left = 911.0
+offset_top = -183.0
+offset_right = 1331.0
+offset_bottom = -160.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Roll over from S or down arrow"
+
+[node name="Label5" type="Label" parent="labels"]
+offset_left = 1457.0
+offset_top = -187.0
+offset_right = 2015.0
+offset_bottom = -164.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Light attack from E, Heavy attack from Q"
+
+[node name="Label6" type="Label" parent="labels"]
+offset_left = 2363.0
+offset_top = -188.0
+offset_right = 2839.0
+offset_bottom = -165.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "now try to reach 100% of the game"
+
+[node name="Label7" type="Label" parent="labels"]
+offset_left = 5346.0
+offset_top = -163.0
+offset_right = 6246.0
+offset_bottom = -140.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 16
+text = "you can jump or roll over this platform , enemies will appear on it"
+
+[node name="Label8" type="Label" parent="labels"]
+offset_left = 7740.0
+offset_top = -154.0
+offset_right = 8256.0
+offset_bottom = -131.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "enemies speed will increase, good luck"
+
+[node name="Label9" type="Label" parent="labels"]
+offset_left = 12887.0
+offset_top = -167.0
+offset_right = 13829.0
+offset_bottom = -147.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 18
+text = "❗❗ Use Light attack on blue🟦 skelletons, Heavy on red 🟥 ones"
+
+[node name="Label10" type="Label" parent="labels"]
+offset_left = 15775.0
+offset_top = -164.0
+offset_right = 16303.0
+offset_bottom = -141.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Get ready because they will get faster"
+
+[node name="Label12" type="Label" parent="labels"]
+offset_left = 20415.0
+offset_top = -165.0
+offset_right = 20991.0
+offset_bottom = -142.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "White red or blue it doesn't matter right ?"
+
+[node name="Label13" type="Label" parent="labels"]
+offset_left = 22889.0
+offset_top = -170.0
+offset_right = 23264.0
+offset_bottom = -148.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "sorry, they got fast again"
+
+[node name="Label14" type="Label" parent="labels"]
+offset_left = 25873.0
+offset_top = -166.0
+offset_right = 26259.0
+offset_bottom = -144.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "RED 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥"
+
+[node name="Label16" type="Label" parent="labels"]
+offset_left = 28283.0
+offset_top = -171.0
+offset_right = 28669.0
+offset_bottom = -140.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "You are heading toward the final boss, avoid the laser after you see the warning, you have to hit 20 black hearts to kill him good luck"
+
+[node name="Label15" type="Label" parent="labels"]
+offset_left = 25874.0
+offset_top = -97.0
+offset_right = 26260.0
+offset_bottom = -75.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "BLUE  🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦🟦"
+
+[node name="Label11" type="Label" parent="labels"]
+offset_left = 6554.0
+offset_top = -169.0
+offset_right = 7170.0
+offset_bottom = -146.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "You can heal yourself by taking these Hearts"
+
+[node name="Button" type="Button" parent="."]
+offset_left = -13.0
+offset_top = -172.0
+offset_right = 61.0
+offset_bottom = -110.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vef74")
+text = "Play"
+script = ExtResource("9_vef74")
+
+[node name="plat" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(5693, -111)
+
+[node name="plat2" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(5818, -111)
+
+[node name="plat3" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(5942, -112)
+
+[node name="plat4" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6065, -111)
+
+[node name="plat5" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6350, -111)
+
+[node name="plat6" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6475, -111)
+
+[node name="plat7" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6599, -111)
+
+[node name="plat8" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6725, -111)
+
+[node name="plat9" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6850, -111)
+
+[node name="plat10" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(6975, -111)
+
+[node name="plat11" parent="." instance=ExtResource("12_iotsf")]
+position = Vector2(7100, -111)
+
+[node name="long plat" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(8420, -110)
+
+[node name="long plat2" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(9179, -110)
+
+[node name="long plat3" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(9940, -110)
+
+[node name="long plat4" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(10698, -110)
+
+[node name="long plat5" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(11459, -110)
+
+[node name="long plat6" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(12217, -110)
+
+[node name="long plat7" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(12981, -110)
+
+[node name="long plat8" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(13741, -110)
+
+[node name="long plat9" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(14501, -110)
+
+[node name="long plat10" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(15263, -110)
+
+[node name="long plat11" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(16027, -110)
+
+[node name="long plat12" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(16790, -110)
+
+[node name="long plat13" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(17552, -110)
+
+[node name="long plat14" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(18315, -110)
+
+[node name="long plat15" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(19076, -110)
+
+[node name="long plat16" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(19840, -110)
+
+[node name="long plat17" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(20604, -110)
+
+[node name="long plat18" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(21366, -110)
+
+[node name="long plat19" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(22126, -110)
+
+[node name="long plat20" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(22890, -110)
+
+[node name="long plat21" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(23655, -110)
+
+[node name="long plat22" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(24418, -110)
+
+[node name="long plat23" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(25180, -110)
+
+[node name="long plat24" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(25942, -110)
+
+[node name="long plat25" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(26704, -110)
+
+[node name="long plat26" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(27463, -110)
+
+[node name="long plat27" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(28223, -110)
+
+[node name="long plat28" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(28986, -110)
+
+[node name="long plat29" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(29748, -110)
+
+[node name="long plat30" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(30509, -110)
+
+[node name="long plat31" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(31269, -110)
+
+[node name="long plat32" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(32030, -110)
+
+[node name="long plat33" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(32794, -110)
+
+[node name="long plat34" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(33555, -110)
+
+[node name="long plat35" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(34318, -110)
+
+[node name="long plat36" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(35079, -110)
+
+[node name="long plat37" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(35838, -110)
+
+[node name="long plat38" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(36600, -110)
+
+[node name="long plat39" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(37365, -110)
+
+[node name="long plat40" parent="." instance=ExtResource("14_215e1")]
+position = Vector2(38130, -110)
+
+[node name="skeletons" type="Node" parent="."]
+
+[node name="skeleton" parent="skeletons" groups=["enemies"] instance=ExtResource("11_mfdv2")]
+position = Vector2(2573, -75)
+
+[node name="skeleton2" parent="skeletons" groups=["enemies"] instance=ExtResource("11_mfdv2")]
+position = Vector2(2846, -74)
+
+[node name="skeleton3" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(3623, -75)
+
+[node name="skeleton4" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(3750, -75)
+
+[node name="skeleton5" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(4786, -75)
+
+[node name="skeleton6" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(4924, -75)
+
+[node name="skeleton7" parent="skeletons" groups=["enemiess"] instance=ExtResource("11_mfdv2")]
+position = Vector2(5094, -75)
+
+[node name="skeleton8" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6092, -154)
+
+[node name="skeleton9" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6437, -75)
+
+[node name="skeleton10" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6620, -155)
+
+[node name="skeleton11" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6783, -75)
+
+[node name="skeleton12" parent="skeletons" groups=["enemies5%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(6790, -153)
+
+[node name="skeleton13" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(8699, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton14" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(8833, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton15" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(8965, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton16" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9138, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton17" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9364, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton18" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9669, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton19" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9742, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton20" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(9985, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton21" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10180, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton22" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10480, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton23" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10718, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton24" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10906, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton25" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11207, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton26" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11390, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton27" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11654, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton28" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11814, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton29" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12025, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton30" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12269, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton31" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12444, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton32" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12554, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton34" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12815, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton35" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13055, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton50" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13206, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton51" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13330, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton53" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13521, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton55" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13689, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton56" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13917, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton111" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(18689, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton114" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(18689, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton115" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(18781, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton116" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(18965, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton117" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19122, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton120" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19252, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton121" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19436, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton123" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19552, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton125" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19709, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton127" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19878, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton129" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20053, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton130" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20211, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton133" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20464, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton135" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20700, -153)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton137" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(21269, -153)
+
+[node name="skeleton144" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(21705, -153)
+
+[node name="skeleton150" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(22067, -153)
+
+[node name="skeleton154" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(22324, -153)
+
+[node name="skeleton138" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(21273, -75)
+
+[node name="skeleton146" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(21762, -75)
+
+[node name="skeleton149" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(22005, -75)
+
+[node name="skeleton160" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(22700, -75)
+
+[node name="skeleton118" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19122, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton119" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19264, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton122" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19438, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton124" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19593, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton126" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19766, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton161" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(24031, -75)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton173" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(24676, -75)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton184" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(25368, -75)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton165" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(24058, -153)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton167" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(24349, -153)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton171" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(24609, -153)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton178" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(24984, -153)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton181" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(25113, -153)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton183" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(25376, -153)
+script = ExtResource("15_e36ub")
+
+[node name="skeleton128" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(19940, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton131" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20091, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton132" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20310, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton134" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20536, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton136" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(20662, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton112" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(18816, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton113" parent="skeletons" groups=["enemies30%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(18955, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton33" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10609, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton36" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(10858, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton37" parent="skeletons" groups=["enemies10%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11132, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton38" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11295, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton39" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11517, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton40" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11725, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton41" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(11927, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton42" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12091, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton43" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12303, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton44" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12511, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton45" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12623, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton46" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(12768, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton47" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13015, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton48" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13153, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton49" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13305, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton52" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13456, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton54" parent="skeletons" groups=["enemies15%"] instance=ExtResource("11_mfdv2")]
+position = Vector2(13836, -75)
+script = ExtResource("13_lc2xo")
+
+[node name="skeleton57" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14030, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton64" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14458, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton65" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14595, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton68" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14813, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton69" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14957, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton73" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(15130, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton80" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(15509, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton81" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(16486, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton85" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(16748, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton89" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(17035, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton97" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(17635, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton107" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(18103, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton108" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(18382, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton139" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(21404, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton145" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(21822, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton152" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(22195, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton158" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(22569, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton140" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(21513, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton147" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(21897, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton153" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(22423, -75)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton84" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(16486, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton91" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(17087, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton93" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(17221, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton99" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(17667, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton103" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(17822, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton162" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(23904, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton169" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(24439, -74)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton175" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(24802, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton179" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(25100, -75)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton166" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(24206, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton174" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(24854, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton185" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(25490, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton189" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(26865, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton190" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(26967, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton191" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27066, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton192" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27193, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton193" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27300, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton194" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27398, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton195" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27509, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton196" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27627, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton197" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27755, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton207" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27878, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton208" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(27994, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton209" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(28095, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton210" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(28200, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton211" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(28292, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton105" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(18123, -153)
+script = ExtResource("16_e8heu")
+
+[node name="skeleton59" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14030, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton61" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14282, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton67" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(14710, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton74" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(15043, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton76" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(15306, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton79" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(15425, -153)
+script = ExtResource("15_7sc4i")
+
+[node name="skeleton58" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14188, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton63" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14336, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton71" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14702, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton77" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(15253, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton78" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(15367, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton82" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(16619, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton86" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(16886, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton92" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17202, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton94" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17352, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton96" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17495, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton100" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17773, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton102" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17948, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton163" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(24165, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton172" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(24552, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton177" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(24968, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton182" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(25245, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton186" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(25517, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton187" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(26855, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton188" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(26976, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton198" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27079, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton201" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27386, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton199" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27182, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton200" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27293, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton202" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27504, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton203" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27617, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton204" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27745, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton205" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27876, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton206" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(27994, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton212" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(28105, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton213" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(28215, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton214" parent="skeletons" groups=["enemies45%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(28327, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton168" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(24302, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton164" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(23909, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton170" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(24497, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton176" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(24732, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton180" parent="skeletons" groups=["enemies40%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(25245, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton106" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(18247, -75)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton83" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(16640, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton87" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(16792, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton90" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(16945, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton95" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17354, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton98" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17503, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton104" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(17970, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton109" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(18263, -153)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton141" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(21558, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton148" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(21939, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton156" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(22443, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton159" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(22703, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton142" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(21402, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton143" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(21640, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton151" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(22155, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton155" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(22316, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton157" parent="skeletons" groups=["enemies35%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(22561, -75)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton110" parent="skeletons" groups=["enemies25%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(18422, -150)
+script = ExtResource("18_rvswv")
+
+[node name="skeleton60" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14171, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton62" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14405, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton66" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14549, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton70" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14805, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton72" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(14922, -153)
+script = ExtResource("16_80cx4")
+
+[node name="skeleton75" parent="skeletons" groups=["enemies20%"] instance=ExtResource("11_mfdv2")]
+modulate = Color(0, 0, 0.79607844, 1)
+position = Vector2(15176, -153)
+script = ExtResource("16_80cx4")
+
+[node name="hearts" type="Node" parent="."]
+
+[node name="heart" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(7260, -77)
+
+[node name="heart2" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(9368, -75)
+
+[node name="heart3" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(11481, -148)
+
+[node name="heart4" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(12864, -80)
+
+[node name="heart5" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(13857, -170)
+
+[node name="heart6" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(14638, -149)
+
+[node name="heart7" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(15596, -167)
+
+[node name="heart8" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(16086, -84)
+
+[node name="heart9" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(17015, -146)
+
+[node name="heart10" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(17573, -78)
+
+[node name="heart11" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(17964, -150)
+
+[node name="heart12" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(19788, -150)
+
+[node name="heart13" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(20723, -75)
+
+[node name="heart14" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(21752, -149)
+
+[node name="heart15" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(22878, -163)
+
+[node name="heart16" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(23265, -163)
+
+[node name="heart17" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(24739, -150)
+
+[node name="heart19" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(25584, -150)
+
+[node name="heart20" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(28915, -78)
+
+[node name="heart21" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(29625, -78)
+
+[node name="heart22" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(31993, -147)
+
+[node name="heart23" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(32539, -77)
+
+[node name="heart24" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(32848, -145)
+
+[node name="heart25" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(33360, -77)
+
+[node name="heart26" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(33669, -150)
+
+[node name="heart27" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(34098, -79)
+
+[node name="heart28" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(34396, -150)
+
+[node name="heart29" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(34788, -71)
+
+[node name="heart30" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(35195, -147)
+
+[node name="heart31" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(35457, -147)
+
+[node name="heart32" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(35878, -76)
+
+[node name="heart33" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(36320, -143)
+
+[node name="heart18" parent="hearts" instance=ExtResource("19_boyg6")]
+position = Vector2(24348, -77)
+
+[node name="boss" parent="." instance=ExtResource("21_hb5m1")]
+position = Vector2(31177, -87)
+
+[node name="manager" type="Node" parent="."]
+script = ExtResource("22_x5p1p")
+
+[node name="coin" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(31202, -81)
+
+[node name="coin2" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(31608, -148)
+
+[node name="coin4" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(32305, -145)
+
+[node name="coin7" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(32422, -74)
+
+[node name="coin8" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(32696, -157)
+
+[node name="coin9" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(32771, -81)
+
+[node name="coin10" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(32987, -156)
+
+[node name="coin11" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(33176, -75)
+
+[node name="coin12" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(33329, -158)
+
+[node name="coin13" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(33449, -158)
+
+[node name="coin14" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(33591, -81)
+
+[node name="coin15" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(33747, -150)
+
+[node name="coin16" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(33920, -79)
+
+[node name="coin17" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(34007, -151)
+
+[node name="coin18" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(34168, -153)
+
+[node name="coin19" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(34400, -80)
+
+[node name="coin20" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(34691, -81)
+
+[node name="coin23" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(34953, -77)
+
+[node name="coin25" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35194, -74)
+
+[node name="coin22" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(34803, -154)
+
+[node name="coin24" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35033, -157)
+
+[node name="coin26" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35360, -157)
+
+[node name="coin27" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35399, -74)
+
+[node name="coin28" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35475, -74)
+
+[node name="coin29" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35554, -74)
+
+[node name="coin30" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35592, -145)
+
+[node name="coin31" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35673, -145)
+
+[node name="coin32" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35788, -76)
+
+[node name="coin33" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35866, -151)
+
+[node name="coin34" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(35980, -74)
+
+[node name="coin35" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(36085, -150)
+
+[node name="coin36" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(36161, -76)
+
+[node name="coin37" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(36265, -147)
+
+[node name="coin38" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(36373, -72)
+
+[node name="coin39" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(36445, -160)
+
+[node name="coin21" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(34550, -149)
+
+[node name="coin5" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(32191, -78)
+
+[node name="coin6" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(32191, -78)
+
+[node name="coin3" parent="." instance=ExtResource("23_qhcbd")]
+position = Vector2(31781, -75)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-132.00002, -325.75)
+scale = Vector2(0.05859374, 0.050292958)
+texture = ExtResource("26_bnpwn")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -150.0
+offset_top = -318.0
+offset_right = -112.0
+offset_bottom = -287.0
+text = "ESC"
+script = ExtResource("27_36jdj")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = -242.0
+offset_top = -283.0
+offset_right = -82.0
+offset_bottom = -227.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "High Speed 
+
+Press K"
+
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="Button3"]
+libraries = {
+&"": SubResource("AnimationLibrary_bnpwn")
+}
+
+[node name="Button4" type="Button" parent="."]
+offset_left = -50.0
+offset_top = -291.0
+offset_right = 128.0
+offset_bottom = -235.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "High jumping
+
+Press G"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Button4"]
+libraries = {
+&"": SubResource("AnimationLibrary_dhpj7")
+}
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 180.0
+offset_top = -283.0
+offset_right = 300.0
+offset_bottom = -227.0
+theme_override_fonts/font = ExtResource("7_eow3j")
+text = "Invicible
+
+Press F"
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Button5"]
+libraries = {
+&"": SubResource("AnimationLibrary_xex6t")
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

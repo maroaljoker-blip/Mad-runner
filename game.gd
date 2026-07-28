@@ -14,6 +14,7 @@ extends Node2D
 @onready var label_11: Label = $player/Label11
 @onready var animation_player_2: AnimationPlayer = $player/Camera2D/AnimationPlayer2
 @onready var boss: Node2D = $boss
+@onready var coins_label: Label = $"player/coins label"
 
 
 
@@ -48,14 +49,16 @@ func _on_button_pressed() -> void:
 func _process(delta):
 	if player.global_position.x >= 2890 and !wave1_started:
 		wave1_started = true
-		player.SPEED = 85
+		if player.SPEED < 85:
+			player.SPEED = 85
 		for enemy in get_tree().get_nodes_in_group("enemiess"):
 			enemy.moving = true
 		labelx.visible = true
 		
 	if player.global_position.x >= 5693 and !wave2_started:
 		wave2_started = true
-		player.JUMP_VELOCITY = -380.0
+		if player.JUMP_VELOCITY > -380:
+			player.JUMP_VELOCITY = -380
 		label_2.visible = true
 		labelx.visible = false
 		animation_player_2.play("DD")
@@ -110,8 +113,9 @@ func _process(delta):
 		label_10.visible = true
 		for enemy in get_tree().get_nodes_in_group("enemies45%"):
 			enemy.moving = true
-	if player.global_position.x >= 28900 and !boss.active:
+	if player.global_position.x >= 30833 and !boss.active:
 		boss.active = true
 		boss.get_node("timer").start()
 		label_11.visible = true
 		label_10.visible = false
+		coins_label.visible = true

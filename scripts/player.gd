@@ -8,8 +8,10 @@ extends CharacterBody2D
 @onready var camera_2d: Camera2D = $Camera2D
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var area_2d: Area2D = $Area2D
-@onready var collision_shape_2d_22: CollisionShape2D = $Area2D/CollisionShape2D22
+@onready var damage_area: Area2D = $"damage area"
+
+@onready var collision_shape_2d_22: CollisionShape2D = $"damage area/CollisionShape2D22"
+
 @onready var label: Label = $Label
 @onready var animated_sprite_2d_2: AnimatedSprite2D = $AnimatedSprite2D2
 @onready var animated_sprite_2d_3: AnimatedSprite2D = $AnimatedSprite2D3
@@ -125,7 +127,14 @@ func attack_two():
 func roll():
 	rolling = true
 	animated_sprite_2d.play("roll")
+
+	# Ignore one-way platforms while rolling
 	set_collision_mask_value(2, false)
+
+	# Force the player below the platform immediately
+	global_position.y += 6
+	velocity.y = 150
+
 	collision_shape_2d.rotation_degrees = 90
 	collision_shape_2d.position.y += 3
 
@@ -133,6 +142,9 @@ func roll():
 
 	collision_shape_2d.rotation_degrees = 0
 	collision_shape_2d.position.y -= 3
+
+	# Enable platform collision again
+	set_collision_mask_value(2, true)
 
 	rolling = false
 	

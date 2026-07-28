@@ -637,11 +637,11 @@ position = Vector2(29.5, 21.5)
 shape = SubResource("RectangleShape2D_fkf2u")
 disabled = true
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 7
-collision_mask = 7
+[node name="damage area" type="Area2D" parent="."]
+collision_layer = 39
+collision_mask = 39
 
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="damage area"]
 position = Vector2(2, 22)
 shape = SubResource("RectangleShape2D_urp6f")
 
@@ -677,4 +677,4 @@ sprite_frames = SubResource("SpriteFrames_m6nxt")
 animation = &"full"
 autoplay = "full"
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="damage area" to="." method="_on_area_2d_body_entered"]
