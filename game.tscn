@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://ii4ny2rjdhjp"]
+[gd_scene load_steps=65 format=4 uid="uid://ii4ny2rjdhjp"]
 
 [ext_resource type="Script" uid="uid://nhpnmw138vyi" path="res://game.gd" id="1_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bgfh2pgpr1w4b" path="res://assites/Layer_0000_9.png" id="1_ryrav"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://dksja2ejvj7fl" path="res://button_4.gd" id="29_bnpwn"]
 [ext_resource type="Script" uid="uid://da0d7n4d31aku" path="res://button_5.gd" id="30_36jdj"]
 [ext_resource type="AudioStream" uid="uid://bmpsxa7yvm7qj" path="res://assites/Pixel_Operator_8/AudioCutter_Phonk House Mix ※ Best Aggressive Drift Phonk ※ Фонк 2023(MP3_160K).mp3" id="31_xfvwf"]
+[ext_resource type="Script" uid="uid://di1qdhbbrovli" path="res://audio_stream_player_2d.gd" id="32_dhpj7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iotsf"]
 texture = ExtResource("1_ryrav")
@@ -297,7 +298,8 @@ tile_map_data = PackedByteArray("AAAAAOf/BAAAAAAAAADG/+f/BAAAAAAAAACM/+f/BAAAAAA
 tile_set = SubResource("TileSet_e8heu")
 
 [node name="player" parent="." instance=ExtResource("6_mfdv2")]
-position = Vector2(5, -103)
+position = Vector2(21062, -177)
+rotation = -0.000111507536
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(19, -126.38721)
@@ -2052,6 +2054,7 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("31_xfvwf")
 autoplay = true
+script = ExtResource("32_dhpj7")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button5" to="Button5" method="_on_pressed"]

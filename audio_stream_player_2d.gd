@@ -1,0 +1,13 @@
+extends AudioStreamPlayer2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	finished.connect(_on_finished)
+
+func _on_finished():
+	play()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
