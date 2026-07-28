@@ -654,7 +654,7 @@ offset_bottom = 23.0
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 visible = false
 modulate = Color(1, 0.40392157, 0, 1)
-position = Vector2(-259.5, -261.50003)
+position = Vector2(-286.50003, -294.5)
 scale = Vector2(1.812499, 1.812499)
 sprite_frames = SubResource("SpriteFrames_s7jk6")
 animation = &"full"
@@ -663,7 +663,7 @@ autoplay = "full"
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 visible = false
 modulate = Color(1, 0.40392157, 0, 1)
-position = Vector2(-229.50005, -261.5001)
+position = Vector2(-255.5, -294.5001)
 scale = Vector2(1.8124962, 1.8124962)
 sprite_frames = SubResource("SpriteFrames_feeoa")
 animation = &"full"
@@ -672,7 +672,7 @@ autoplay = "full"
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 visible = false
 modulate = Color(1, 0.40392157, 0, 1)
-position = Vector2(-198.49998, -261.49994)
+position = Vector2(-223.49998, -294.49994)
 scale = Vector2(1.8125018, 1.8125018)
 sprite_frames = SubResource("SpriteFrames_m6nxt")
 animation = &"full"

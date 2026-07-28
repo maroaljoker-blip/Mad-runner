@@ -26,6 +26,7 @@ var wave5_started = false
 var wave6_started = false
 var wave7_started = false
 var wave8_started = false
+var wave9_started = false
 func _on_button_pressed() -> void:
 	player.can_move = true
 	button.disabled = true
@@ -86,9 +87,15 @@ func _process(delta):
 		label_7.visible = true
 		for enemy in get_tree().get_nodes_in_group("enemies30%"):
 			enemy.moving = true
-	if player.global_position.x >= 20700 and !wave8_started:
+	if player.global_position.x >= 20470 and !wave8_started:
 		wave8_started = true
 		label_7.visible = false
 		label_8.visible = true
 		for enemy in get_tree().get_nodes_in_group("enemies35%"):
+			enemy.moving = true
+	if player.global_position.x >= 22890 and !wave9_started:
+		wave9_started = true
+		label_8.visible = false
+		label_9.visible = true
+		for enemy in get_tree().get_nodes_in_group("enemies40%"):
 			enemy.moving = true
