@@ -13,6 +13,8 @@ extends Node2D
 @onready var label_6: Label = $player/Label6
 @onready var label_11: Label = $player/Label11
 @onready var animation_player_2: AnimationPlayer = $player/Camera2D/AnimationPlayer2
+@onready var boss: Node2D = $boss
+
 
 
 
@@ -27,6 +29,9 @@ var wave6_started = false
 var wave7_started = false
 var wave8_started = false
 var wave9_started = false
+var wave10_started = false
+func _ready() -> void:
+	boss.player = player
 func _on_button_pressed() -> void:
 	player.can_move = true
 	button.disabled = true
@@ -99,3 +104,14 @@ func _process(delta):
 		label_9.visible = true
 		for enemy in get_tree().get_nodes_in_group("enemies40%"):
 			enemy.moving = true
+	if player.global_position.x >= 25600 and !wave10_started:
+		wave10_started = true
+		label_9.visible = false
+		label_10.visible = true
+		for enemy in get_tree().get_nodes_in_group("enemies45%"):
+			enemy.moving = true
+	if player.global_position.x >= 28900 and !boss.active:
+		boss.active = true
+		boss.get_node("timer").start()
+		label_11.visible = true
+		label_10.visible = false

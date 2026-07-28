@@ -42,12 +42,12 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "sin":
+	if body.name == "sin" or body.name == "nemo":
 		if not can_take_hit:
 			return
 		animated_sprite_2d.play("hit")
 		can_take_hit = false
-		if body.name == "Nemo":
+		if body.name == "nemo":
 			lives -= 2
 		else:
 			lives -= 1
